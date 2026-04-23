@@ -1,27 +1,31 @@
 # DiffGate
 
-GitHub PR 风险审查 Webhook 服务。目标是接收 GitHub PR Webhook，异步分析 diff 与任务范围，调用 LLM 输出风险摘要，并自动回帖到 PR。
+GitHub PR 风险审查 Webhook 服务。
 
-## 当前状态
-- 状态：计划与 review 整理完成，尚未开始代码实现。
-- 最终实现计划：[PLAN.md](PLAN.md)
-- Review 入口：[REVIEW.md](REVIEW.md)
-- 详细设计：[docs/plans/2026-04-23-diffgate-pr-webhook-design.md](docs/plans/2026-04-23-diffgate-pr-webhook-design.md)
+## 快速启动
 
-## MVP 范围
-- FastAPI Webhook 服务，收到 PR 事件后快速返回 `202 Accepted`。
-- 后台任务拉取 PR diff，解析改动范围，并调用 Volcano Engine OpenAI-compatible API 分析风险。
-- 使用 GitHub API 幂等创建或更新 PR 评论。
-- 提供 CLI 离线回放能力，用于本地验证 diff 分析与报告输出。
+```bash
+cp .env.example .env && pip install -e ".[dev]"
+python -m uvicorn diffgate.main:app --reload
+# 或 docker compose up -d
+```
 
-## 非目标
-- 不做 SQLite 或历史均值统计。
-- 不接入额外 analytics、telemetry 或无关网络调用。
-- 不在父目录安装依赖或生成构建产物。
+## 注册 Webhook
 
-## 运行方式
-代码尚未实现，因此暂无可运行命令。实现开始后，应在本子目录内补充安装、测试、Docker 和本地回放命令。
+GitHub 仓库 Settings > Webhooks > Add webhook：Payload URL、Content type、Secret、Events 选择 Pull requests。
 
-## 最近整理
-- 将原父目录 `docs/plans` 下的 DiffGate 计划与 review 文档迁移到本项目目录。
-- 补齐项目入口文件 `README.md`、`PLAN.md`、`REVIEW.md`。
+本地调试：`ngrok http 8000`，将 ngrok URL 填入 GitHub Webhook 配置。
+
+## CLI 回放
+
+```bash
+export GITHUB_TOKEN=ghp_xxxxx
+python -m diffgate.cli replay --repo psf/requests --n 30 --output report.json
+```
+
+## 验证
+
+```bash
+pytest tests/ -v
+curl http://localhost:8000/health
+```
