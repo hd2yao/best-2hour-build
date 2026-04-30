@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>别叫我恶魔 · 剧情与世界观资料库</title>
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div class="workspace">
+      <aside class="sidebar">
+        <div class="brand-block">
+          <span class="brand-mark">恶</span>
+          <div>
+            <p class="eyebrow">小说资料库</p>
+            <h1>别叫我恶魔</h1>
+          </div>
+        </div>
+
+        <nav class="tabs" aria-label="资料分类">
+          <button class="tab-button is-active" type="button" data-tab="overview"><span>总览</span><small>Archive</small></button>
+          <button class="tab-button" type="button" data-tab="arcs"><span>剧情篇章</span><small>18 arcs</small></button>
+          <button class="tab-button" type="button" data-tab="world"><span>世界观</span><small>World</small></button>
+          <button class="tab-button" type="button" data-tab="characters"><span>阵营人物</span><small>Roster</small></button>
+          <button class="tab-button" type="button" data-tab="places"><span>地点势力</span><small>Map</small></button>
+        </nav>
+
+        <div class="side-stats" aria-label="资料概览">
+          <span><strong>2624</strong>章节</span>
+          <span><strong>18</strong>篇章</span>
+          <span><strong>50+</strong>人物</span>
+        </div>
+
+        <figure class="mockup-card">
+          <img src="./assets/design-mockup.png" alt="imagegen 生成的网页视觉设计稿">
+          <figcaption>imagegen 视觉稿</figcaption>
+        </figure>
+      </aside>
+
+      <div class="content-area">
+        <header class="commandbar">
+          <div>
+            <p class="eyebrow">本地整理版 · 可点击查看</p>
+            <h2>剧情、设定、阵营人物工作台</h2>
+          </div>
+          <label class="global-search">
+            <span>搜索</span>
+            <input id="globalSearch" type="search" placeholder="输入人物、篇章、阵营、设定关键词">
+          </label>
+        </header>
+
+        <main>
+        <section class="tab-panel is-active" id="overview" aria-labelledby="overview-tab">
+          <div class="dashboard-grid">
+            <article class="brief-panel">
+              <p class="section-kicker">核心主线</p>
+              <h2>从锦城魔灾到至高远行</h2>
+              <p>任杰从打工少年、魔契者、猎魔学员一路走到蓝盟领袖与至高之王。故事层级从城市魔灾、学院竞赛、异族战争，逐步扩展到虚假星空、方舟计划、界海、真理道门和未知之无。</p>
+              <div class="theme-row">
+                <span>薪火</span>
+                <span>破笼</span>
+                <span>蓝盟</span>
+                <span>至高</span>
+              </div>
+            </article>
+
+            <figure class="concept-panel">
+              <img src="./assets/world-concept.png" alt="恶魔之树、高天之城、星笼和真理道门概念图">
+              <figcaption>
+                <strong>世界观概念图</strong>
+                <span>恶魔之树 · 高天之城 · 星笼 · 真理道门</span>
+              </figcaption>
+            </figure>
+
+            <section class="mini-panel">
+              <div class="panel-title">
+                <p class="section-kicker">阅读路径</p>
+                <h3>四段升级</h3>
+              </div>
+              <div class="phase-grid">
+                <article><span class="phase-index">01</span><h3>少年成长期</h3><p>锦城、学院、高天选拔。</p></article>
+                <article><span class="phase-index">02</span><h3>多族战争期</h3><p>人族、妖族、灵族、神魔入局。</p></article>
+                <article><span class="phase-index">03</span><h3>破笼星空期</h3><p>蓝盟成立，方舟真相揭开。</p></article>
+                <article><span class="phase-index">04</span><h3>至高终局期</h3><p>界海、道门、古初和未知之无。</p></article>
+              </div>
+            </section>
+
+            <section class="mini-panel">
+              <div class="panel-title">
+                <p class="section-kicker">概念速览</p>
+                <h3>关键设定</h3>
+              </div>
+              <div class="visual-stack" id="visualGallery"></div>
+            </section>
+          </div>
+        </section>
+
+        <section class="tab-panel" id="arcs">
+          <div class="section-head">
+            <div>
+              <p class="section-kicker">剧情结构</p>
+              <h2>主线篇章</h2>
+            </div>
+            <div class="tools">
+              <input id="arcSearch" type="search" placeholder="搜索篇章、人物、关键词">
+            </div>
+          </div>
+          <div class="arc-list" id="arcList"></div>
+        </section>
+
+        <section class="tab-panel" id="world">
+          <div class="section-head">
+            <div>
+              <p class="section-kicker">百科条目</p>
+              <h2>世界观设定</h2>
+            </div>
+          </div>
+          <div class="world-layout">
+            <aside class="category-rail" id="worldCategoryRail"></aside>
+            <div class="world-entries" id="worldEntries"></div>
+          </div>
+        </section>
+
+        <section class="tab-panel" id="characters">
+          <div class="section-head">
+            <div>
+              <p class="section-kicker">阵营档案</p>
+              <h2>人物介绍</h2>
+            </div>
+            <div class="tools">
+              <input id="characterSearch" type="search" placeholder="搜索人物、阵营、能力">
+            </div>
+          </div>
+          <div class="filter-row" id="characterFilters"></div>
+          <div class="table-wrap">
+            <table class="character-table">
+              <thead>
+                <tr>
+                  <th>形象</th>
+                  <th>人物</th>
+                  <th>阵营</th>
+                  <th>定位</th>
+                  <th>能力 / 关键词</th>
+                  <th>简介</th>
+                </tr>
+              </thead>
+              <tbody id="characterRows"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="tab-panel" id="places">
+          <div class="section-head">
+            <div>
+              <p class="section-kicker">地图与势力</p>
+              <h2>关键地点和组织</h2>
+            </div>
+          </div>
+          <div class="place-grid" id="placeGrid"></div>
+        </section>
+        </main>
+      </div>
+    </div>
+
+    <dialog class="profile-dialog" id="profileDialog">
+      <button class="dialog-close" type="button" aria-label="关闭人物详情">×</button>
+      <div id="profileContent"></div>
+    </dialog>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
