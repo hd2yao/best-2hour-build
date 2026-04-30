@@ -4,7 +4,7 @@
 
 **Goal:** Build a static, browsable webpage that summarizes the novel's arcs, worldbuilding, factions, and characters without dumping the full text.
 
-**Architecture:** A dependency-free static site with `index.html` for structure, `styles.css` for responsive presentation, and `app.js` for local data plus tab, accordion, search, filter, and detail-panel interactions. Documentation lives in the project root.
+**Architecture:** A dependency-free static site with `index.html` for structure, `styles.css` for responsive presentation, and `app.js` for local data plus sidebar navigation, accordion, search, filter, and detail-panel interactions. Documentation lives in the project root. Imagegen-generated assets are copied into `assets/` for project-bound use.
 
 **Tech Stack:** HTML, CSS, vanilla JavaScript, local generated visual treatments.
 
@@ -26,6 +26,8 @@
 
 **Files:**
 - Create: `/Users/dysania/program/best 2-hour build/2026-04-30-demon-novel-guide/index.html`
+- Create: `/Users/dysania/program/best 2-hour build/2026-04-30-demon-novel-guide/assets/design-mockup.png`
+- Create: `/Users/dysania/program/best 2-hour build/2026-04-30-demon-novel-guide/assets/world-concept.png`
 
 **Steps:**
 1. Add the top-level layout, tab controls, content containers, character detail dialog, and script/style links.

@@ -579,6 +579,14 @@ function bindEvents() {
     $(`#${button.dataset.tab}`).classList.add("is-active");
   });
 
+  $("#globalSearch").addEventListener("input", (event) => {
+    const value = event.target.value;
+    $("#arcSearch").value = value;
+    $("#characterSearch").value = value;
+    renderArcs();
+    renderCharacters();
+  });
+
   $("#arcSearch").addEventListener("input", renderArcs);
 
   $("#arcList").addEventListener("click", (event) => {

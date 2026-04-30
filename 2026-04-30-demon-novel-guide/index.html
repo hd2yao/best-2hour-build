@@ -4,79 +4,96 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>别叫我恶魔 · 剧情与世界观资料库</title>
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <div class="app-shell">
-      <header class="topbar">
-        <div>
-          <p class="eyebrow">小说资料库 · 本地整理版</p>
-          <h1>别叫我恶魔</h1>
+    <div class="workspace">
+      <aside class="sidebar">
+        <div class="brand-block">
+          <span class="brand-mark">恶</span>
+          <div>
+            <p class="eyebrow">小说资料库</p>
+            <h1>别叫我恶魔</h1>
+          </div>
         </div>
-        <div class="quick-stats" aria-label="资料概览">
-          <span><strong>2624</strong>章</span>
+
+        <nav class="tabs" aria-label="资料分类">
+          <button class="tab-button is-active" type="button" data-tab="overview"><span>总览</span><small>Archive</small></button>
+          <button class="tab-button" type="button" data-tab="arcs"><span>剧情篇章</span><small>18 arcs</small></button>
+          <button class="tab-button" type="button" data-tab="world"><span>世界观</span><small>World</small></button>
+          <button class="tab-button" type="button" data-tab="characters"><span>阵营人物</span><small>Roster</small></button>
+          <button class="tab-button" type="button" data-tab="places"><span>地点势力</span><small>Map</small></button>
+        </nav>
+
+        <div class="side-stats" aria-label="资料概览">
+          <span><strong>2624</strong>章节</span>
           <span><strong>18</strong>篇章</span>
           <span><strong>50+</strong>人物</span>
         </div>
-      </header>
 
-      <nav class="tabs" aria-label="资料分类">
-        <button class="tab-button is-active" type="button" data-tab="overview">总览</button>
-        <button class="tab-button" type="button" data-tab="arcs">剧情篇章</button>
-        <button class="tab-button" type="button" data-tab="world">世界观</button>
-        <button class="tab-button" type="button" data-tab="characters">阵营人物</button>
-        <button class="tab-button" type="button" data-tab="places">地点势力</button>
-      </nav>
+        <figure class="mockup-card">
+          <img src="./assets/design-mockup.png" alt="imagegen 生成的网页视觉设计稿">
+          <figcaption>imagegen 视觉稿</figcaption>
+        </figure>
+      </aside>
 
-      <main>
+      <div class="content-area">
+        <header class="commandbar">
+          <div>
+            <p class="eyebrow">本地整理版 · 可点击查看</p>
+            <h2>剧情、设定、阵营人物工作台</h2>
+          </div>
+          <label class="global-search">
+            <span>搜索</span>
+            <input id="globalSearch" type="search" placeholder="输入人物、篇章、阵营、设定关键词">
+          </label>
+        </header>
+
+        <main>
         <section class="tab-panel is-active" id="overview" aria-labelledby="overview-tab">
-          <div class="overview-grid">
-            <article class="summary-panel">
+          <div class="dashboard-grid">
+            <article class="brief-panel">
               <p class="section-kicker">核心主线</p>
               <h2>从锦城魔灾到至高远行</h2>
-              <p>
-                任杰从锦城打工少年、魔契者、猎魔学员一路走到蓝盟领袖与至高之王。故事的层级从城市魔灾、学院竞赛、异族战争，逐步扩展到虚假星空、方舟计划、界海、真理道门和未知之无。
-              </p>
+              <p>任杰从打工少年、魔契者、猎魔学员一路走到蓝盟领袖与至高之王。故事层级从城市魔灾、学院竞赛、异族战争，逐步扩展到虚假星空、方舟计划、界海、真理道门和未知之无。</p>
               <div class="theme-row">
                 <span>薪火</span>
                 <span>破笼</span>
-                <span>人间值得</span>
-                <span>答案在路上</span>
+                <span>蓝盟</span>
+                <span>至高</span>
               </div>
             </article>
-            <div class="visual-stack" id="visualGallery"></div>
-          </div>
 
-          <section class="section-block">
-            <div class="section-head">
-              <div>
-                <p class="section-kicker">阅读地图</p>
-                <h2>四层推进结构</h2>
+            <figure class="concept-panel">
+              <img src="./assets/world-concept.png" alt="恶魔之树、高天之城、星笼和真理道门概念图">
+              <figcaption>
+                <strong>世界观概念图</strong>
+                <span>恶魔之树 · 高天之城 · 星笼 · 真理道门</span>
+              </figcaption>
+            </figure>
+
+            <section class="mini-panel">
+              <div class="panel-title">
+                <p class="section-kicker">阅读路径</p>
+                <h3>四段升级</h3>
               </div>
-            </div>
-            <div class="phase-grid">
-              <article>
-                <span class="phase-index">01</span>
-                <h3>少年成长期</h3>
-                <p>锦城、猎魔学院、高天选拔构成前期成长线，重点是任杰获得能力、组建同伴、被时代看见。</p>
-              </article>
-              <article>
-                <span class="phase-index">02</span>
-                <h3>多族战争期</h3>
-                <p>山海境、灵境、魔剎禁海和人族劫打开人族、妖族、灵族、魔族、神族的复杂格局。</p>
-              </article>
-              <article>
-                <span class="phase-index">03</span>
-                <h3>破笼星空期</h3>
-                <p>蓝盟成立后，虚假星空与方舟计划真相揭开，蓝星从实验场转入星空舞台。</p>
-              </article>
-              <article>
-                <span class="phase-index">04</span>
-                <h3>至高终局期</h3>
-                <p>界海、真理道门、古初之域和未知之无登场，故事从文明战争进入世界结构之战。</p>
-              </article>
-            </div>
-          </section>
+              <div class="phase-grid">
+                <article><span class="phase-index">01</span><h3>少年成长期</h3><p>锦城、学院、高天选拔。</p></article>
+                <article><span class="phase-index">02</span><h3>多族战争期</h3><p>人族、妖族、灵族、神魔入局。</p></article>
+                <article><span class="phase-index">03</span><h3>破笼星空期</h3><p>蓝盟成立，方舟真相揭开。</p></article>
+                <article><span class="phase-index">04</span><h3>至高终局期</h3><p>界海、道门、古初和未知之无。</p></article>
+              </div>
+            </section>
+
+            <section class="mini-panel">
+              <div class="panel-title">
+                <p class="section-kicker">概念速览</p>
+                <h3>关键设定</h3>
+              </div>
+              <div class="visual-stack" id="visualGallery"></div>
+            </section>
+          </div>
         </section>
 
         <section class="tab-panel" id="arcs">
@@ -142,7 +159,8 @@
           </div>
           <div class="place-grid" id="placeGrid"></div>
         </section>
-      </main>
+        </main>
+      </div>
     </div>
 
     <dialog class="profile-dialog" id="profileDialog">
