@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>别叫我恶魔 · 剧情与世界观资料库</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">小说资料库 · 本地整理版</p>
+          <h1>别叫我恶魔</h1>
+        </div>
+        <div class="quick-stats" aria-label="资料概览">
+          <span><strong>2624</strong>章</span>
+          <span><strong>18</strong>篇章</span>
+          <span><strong>50+</strong>人物</span>
+        </div>
+      </header>
+
+      <nav class="tabs" aria-label="资料分类">
+        <button class="tab-button is-active" type="button" data-tab="overview">总览</button>
+        <button class="tab-button" type="button" data-tab="arcs">剧情篇章</button>
+        <button class="tab-button" type="button" data-tab="world">世界观</button>
+        <button class="tab-button" type="button" data-tab="characters">阵营人物</button>
+        <button class="tab-button" type="button" data-tab="places">地点势力</button>
+      </nav>
+
+      <main>
+        <section class="tab-panel is-active" id="overview" aria-labelledby="overview-tab">
+          <div class="overview-grid">
+            <article class="summary-panel">
+              <p class="section-kicker">核心主线</p>
+              <h2>从锦城魔灾到至高远行</h2>
+              <p>
+                任杰从锦城打工少年、魔契者、猎魔学员一路走到蓝盟领袖与至高之王。故事的层级从城市魔灾、学院竞赛、异族战争，逐步扩展到虚假星空、方舟计划、界海、真理道门和未知之无。
+              </p>
+              <div class="theme-row">
+                <span>薪火</span>
+                <span>破笼</span>
+                <span>人间值得</span>
+                <span>答案在路上</span>
+              </div>
+            </article>
+            <div class="visual-stack" id="visualGallery"></div>
+          </div>
+
+          <section class="section-block">
+            <div class="section-head">
+              <div>
+                <p class="section-kicker">阅读地图</p>
+                <h2>四层推进结构</h2>
+              </div>
+            </div>
+            <div class="phase-grid">
+              <article>
+                <span class="phase-index">01</span>
+                <h3>少年成长期</h3>
+                <p>锦城、猎魔学院、高天选拔构成前期成长线，重点是任杰获得能力、组建同伴、被时代看见。</p>
+              </article>
+              <article>
+                <span class="phase-index">02</span>
+                <h3>多族战争期</h3>
+                <p>山海境、灵境、魔剎禁海和人族劫打开人族、妖族、灵族、魔族、神族的复杂格局。</p>
+              </article>
+              <article>
+                <span class="phase-index">03</span>
+                <h3>破笼星空期</h3>
+                <p>蓝盟成立后，虚假星空与方舟计划真相揭开，蓝星从实验场转入星空舞台。</p>
+              </article>
+              <article>
+                <span class="phase-index">04</span>
+                <h3>至高终局期</h3>
+                <p>界海、真理道门、古初之域和未知之无登场，故事从文明战争进入世界结构之战。</p>
+              </article>
+            </div>
+          </section>
+        </section>
+
+        <section class="tab-panel" id="arcs">
+          <div class="section-head">
+            <div>
+              <p class="section-kicker">剧情结构</p>
+              <h2>主线篇章</h2>
+            </div>
+            <div class="tools">
+              <input id="arcSearch" type="search" placeholder="搜索篇章、人物、关键词">
+            </div>
+          </div>
+          <div class="arc-list" id="arcList"></div>
+        </section>
+
+        <section class="tab-panel" id="world">
+          <div class="section-head">
+            <div>
+              <p class="section-kicker">百科条目</p>
+              <h2>世界观设定</h2>
+            </div>
+          </div>
+          <div class="world-layout">
+            <aside class="category-rail" id="worldCategoryRail"></aside>
+            <div class="world-entries" id="worldEntries"></div>
+          </div>
+        </section>
+
+        <section class="tab-panel" id="characters">
+          <div class="section-head">
+            <div>
+              <p class="section-kicker">阵营档案</p>
+              <h2>人物介绍</h2>
+            </div>
+            <div class="tools">
+              <input id="characterSearch" type="search" placeholder="搜索人物、阵营、能力">
+            </div>
+          </div>
+          <div class="filter-row" id="characterFilters"></div>
+          <div class="table-wrap">
+            <table class="character-table">
+              <thead>
+                <tr>
+                  <th>形象</th>
+                  <th>人物</th>
+                  <th>阵营</th>
+                  <th>定位</th>
+                  <th>能力 / 关键词</th>
+                  <th>简介</th>
+                </tr>
+              </thead>
+              <tbody id="characterRows"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="tab-panel" id="places">
+          <div class="section-head">
+            <div>
+              <p class="section-kicker">地图与势力</p>
+              <h2>关键地点和组织</h2>
+            </div>
+          </div>
+          <div class="place-grid" id="placeGrid"></div>
+        </section>
+      </main>
+    </div>
+
+    <dialog class="profile-dialog" id="profileDialog">
+      <button class="dialog-close" type="button" aria-label="关闭人物详情">×</button>
+      <div id="profileContent"></div>
+    </dialog>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
